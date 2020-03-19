@@ -45,9 +45,22 @@ function displayWord() {
 // Update the wrong letters
 function updateWrongLettersEl() {
   // console.log('Update wrong');
+  // Display wrong letters
   wrongLettersEl.innerHTML = `
   ${wrongLetters.length > 0 ? '<p>Wrong letters : </p>' : ''}
   ${wrongLetters.map(letter => `<span> ${letter} </span>`)}`;
+
+  // Display parts
+  figureParts.forEach((part, index) => {
+    // check to see if the index is less than the 'wrongLetters' array
+    if (index < wrongLetters.length) {
+      part.style.display = 'block';
+    } else {
+      part.style.display = 'none';
+    }
+  });
+
+  // Check if lost
 }
 
 // Show notification
