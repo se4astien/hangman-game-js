@@ -37,7 +37,7 @@ function displayWord() {
   const innerWord = wordEl.innerText.replace(/\n/g, '');
 
   if (innerWord === selectedWord) {
-    finalMessage.innerText = 'Congratulations, you won!';
+    finalMessage.innerText = 'Congratulations, you won :)';
     popup.style.display = 'flex'; // display the popup style
   }
 }
@@ -61,6 +61,10 @@ function updateWrongLettersEl() {
   });
 
   // Check if lost
+  if (wrongLetters.length === figureParts.length) {
+    finalMessage.innerText = 'Unfortunately you lost :(';
+    popup.style.display = 'flex';
+  }
 }
 
 // Show notification
