@@ -1,8 +1,11 @@
 ## Hangman Game JS
 
-* [x] Task 1
-* [x] Task 2
-* [ ] Task 3
+* [x] Draw hangman with SVG
+* [x] Main styling
+* [x] Popup and notification styling
+* [x] Display words function
+* [x] Letter press event handler
+* [x] Wrong letters and play again
 
 ## Online
 
