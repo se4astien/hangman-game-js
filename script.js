@@ -44,7 +44,10 @@ function displayWord() {
 
 // Update the wrong letters
 function updateWrongLettersEl() {
-  console.log('Update wrong');
+  // console.log('Update wrong');
+  wrongLettersEl.innerHTML = `
+  ${wrongLetters.length > 0 ? '<p>Wrong letters : </p>' : ''}
+  ${wrongLetters.map(letter => `<span> ${letter} </span>`)}`;
 }
 
 // Show notification
@@ -58,7 +61,7 @@ function showNotification() {
 
 // Keydown letter down
 window.addEventListener('keydown', e => {
-  console.log(e.keyCode);
+  // console.log(e.keyCode);
   // check if user write a letter between 'a' AND 'z'
   if (e.keyCode >= 65 && e.keyCode <= 90) {
     const letter = e.key; // give us the appropriate key
