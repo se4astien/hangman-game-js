@@ -42,4 +42,48 @@ function displayWord() {
   }
 }
 
+// Update the wrong letters
+function updateWrongLettersEl() {
+  console.log('Update wrong');
+}
+
+// Show notification
+function showNotification() {
+  notification.classList.add('show'); // add 'show' class
+
+  setTimeout(() => {
+    notification.classList.remove('show'); // remove 'show' class
+  }, 2000);
+}
+
+// Keydown letter down
+window.addEventListener('keydown', e => {
+  console.log(e.keyCode);
+  // check if user write a letter between 'a' AND 'z'
+  if (e.keyCode >= 65 && e.keyCode <= 90) {
+    const letter = e.key; // give us the appropriate key
+
+    // if the letter is in the actual word
+    if (selectedWord.includes(letter)) {
+      // we want to push the letter into 'correctLetters' array but we don't want it twice
+      // if 'letter' is not already includes in 'correctLetters' array
+      if (!correctLetters.includes(letter)) {
+        correctLetters.push(letter);
+
+        displayWord();
+      } else {
+        showNotification();
+      }
+    } else {
+      if (!wrongLetters.includes(letter)) {
+        wrongLetters.push(letter);
+
+        updateWrongLettersEl();
+      } else {
+        showNotification();
+      }
+    }
+  }
+});
+
 displayWord(); // execute => get call automatically

@@ -126,6 +126,7 @@ h1 {
   margin: 0;
 }
 
+/* display / hidden depend of the user interaction */
 .notification-container.show {
   transform: translateY(-50px);
 }
